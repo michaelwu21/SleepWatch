@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sleep Watch</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/treeicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+<!--===============================================================================================-->
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyCqaNjasQj8J5au9-CZrRKudSSr3fQtJfo",
+	    authDomain: "sleepwatch-d401a.firebaseapp.com",
+	    databaseURL: "https://sleepwatch-d401a.firebaseio.com",
+	    projectId: "sleepwatch-d401a",
+	    storageBucket: "sleepwatch-d401a.appspot.com",
+	    messagingSenderId: "809313268199",
+	    appId: "1:809313268199:web:4c9a01f31f8b3aa9dd0d42",
+	    measurementId: "G-XE8ZPZGWHP"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+
+</head>
+<body>
+	
+	
+	<div id = "signInAcc" class="container-login100" style="background-image: url('images/forest.jpeg');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<!--<form class="login100-form validate-form" id="signInForm">-->
+				<span class="login100-form-title p-b-37">
+					Sign In
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Username">
+					<input id="username" class="input100" type="text" name="username" placeholder="Username">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Password">
+					<input id="password" class="input100" type="password" name="pass" placeholder="Password">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button id="signin" class="login100-form-btn">
+						Sign In
+					</button>
+				</div>
+
+				<br>
+
+				<div class="container-login100-form-btn">
+					<a id="signUpLink">
+						Sign Up
+					</a>
+				</div>
+			
+		</div>
+
+		
+	</div>
+
+	<div id = "signUpAcc" class="container-login100" style="background-image: url('images/forest.jpeg');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<!--<form class="login100-form validate-form" id="signInForm">-->
+				<span class="login100-form-title p-b-37">
+					Sign Up
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" data-validate="Username">
+					<input id="username1" class="input100" type="text" name="username" placeholder="Username">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-25" data-validate = "Password">
+					<input id="password1" class="input100" type="password" name="pass" placeholder="Password">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button id="signup" class="login100-form-btn">
+						Sign Up
+					</button>
+				</div>
+
+				<br>
+
+				<div class="container-login100-form-btn">
+					<a id="signInLink">
+						Sign In
+					</a>
+				</div>
+			
+		</div>
+
+		
+	</div>
+	
+	<div id = "enterTimes" class="container-login100" style="background-image: url('images/forest.jpeg');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+
+			<span class="login100-form-title p-b-37">
+					Enter Times
+			</span>
+
+			<div class="container-login100-form-btn">
+
+				<label for="start">Start Time:</label>
+
+				<input type="text" id="startTime" name="start" class="container-login100-form-btn">
+				</input>
+
+       		</div>
+       		<br>
+       		<div class="container-login100-form-btn">
+
+				<label for="end">End Time:</label>
+
+				<input type="text" id="endTime" name="end" class="container-login100-form-btn">
+				</input>
+
+       		</div>
+
+       		<br>
+
+       		<div class="container-login100-form-btn">
+				<button id="savedetails" class="login100-form-btn">
+					Save Details
+				</button>
+			</div>
+
+
+		</div>
+	</div>
+
+	<div id = "timeLeft" class="container-login100" style="background-image: url('images/forest.jpeg');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+
+			<div class="container-login100-form-btn">
+
+
+
+
+       		</div>
+
+
+	<div id = "timeLeft" style="background-image: url('images/forest.jpeg');">
+		<div id="timeLeftContainer">
+		<div id = "aliveTree">
+			<div class="container-login100-form-btn">
+				<img src="images/alivetree.jpg" height="300px">
+       		</div>
+       	</div>
+
+       	<div id = "deadTree">
+			<div class="container-login100-form-btn">
+				<img src="images/deadtree.png" height="300px">
+       		</div>
+       	</div>
+			<h1>Time Left: <span id="timeLeftData"></span></h1>
+			<br>
+			<button id="editdetails" class="login100-form-btn">
+				Edit Details
+			</button>
+
+
+		</div>
+		</div>
+	</div>
+
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
